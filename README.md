@@ -4,18 +4,31 @@ The "basic pipeline" notebook demonstrates data processing across bronze, silver
 
 
 ┌─────────────┐
-│   Bronze    │  Raw CSV ingestion
-│ (Raw Data)  │  → ecommerce_orders.csv
+│   Bronze    │
+│ (Raw Data)  │
 └─────┬───────┘
-      │
-      ▼
+       │
+       ▼
+   ecommerce_orders.csv
+
+
 ┌─────────────┐
-│   Silver    │  Cleaned & Validated
-│ (Delta)     │  → price > 0, qty > 0, delivered only
+│   Silver    │
+│ (Delta)     │
 └─────┬───────┘
-      │
-      ▼
+       │
+       ▼
+   Cleaned & Validated
+   - price > 0
+   - qty > 0
+   - delivered only
+
+
 ┌─────────────┐
-│    Gold     │  Aggregated & KPIs
-│ (Delta)     │  → revenue, orders, avg price
+│    Gold     │
+│ (Delta)     │
 └─────────────┘
+   Aggregated & KPIs
+   - revenue
+   - orders
+   - avg price
